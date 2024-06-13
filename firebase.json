@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "predeploy": "npx ng build",
+    "public": "dist/releases-example-app/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "releases-example-app-dev",
+    "dev": "releases-example-app-dev",
+    "prod": "releases-example-app"
+  }
+}
