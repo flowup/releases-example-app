@@ -43,3 +43,6 @@ Thumbs.db
 
 # Firebase cache
 .firebase
+
+# Firebase debug logs
+firebase-debug.log
