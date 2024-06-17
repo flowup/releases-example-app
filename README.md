@@ -1,27 +1,21 @@
-# ReleasesExampleApp
+# Example app for GitHub Releases workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+A basic web app built with Angular and deployed as SPA with Firebase Hosting. Serves to demonstrate using **multiple environments** and **triggering production deployment via GitHub Release**.
 
-## Development server
+## Environments
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Environments are defined in repository settings, secrets are defined separately per environment.
 
-## Code scaffolding
+- [**production** environment](./.github/workflows/production.yml) is triggered by `v*` tag pushed by creating GitHub Release
+- [**staging** environment](./.github/workflows/staging.yml) is automatically deployed on every push to `main` branch (e.g. after PR merge)
+- [**preview** environments](./.github/workflows/preview.yml) are deployed individually for every PR (a comment is posted with a URL which is unique to the branch)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Release instructions
 
-## Build
+In GitHub UI, [create a new release](https://github.com/flowup/releases-example-app/releases/new). Create a new tag in the format `vX.Y` (increment that last released version by 1). Generate release notes, select as latest release and publish. This will trigger a [deployment to production](https://github.com/flowup/releases-example-app/actions/workflows/production.yml).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Links
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Actions](https://github.com/flowup/releases-example-app/actions)
+- [Releases](https://github.com/flowup/releases-example-app/releases)
+- [Deployments](https://github.com/flowup/releases-example-app/deployments)
